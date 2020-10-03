@@ -1,7 +1,7 @@
 @import '../../vars.scss';
 
 .button {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   min-width: 165px;
@@ -18,8 +18,22 @@
   cursor: pointer;
   transition: 0.3s;
   outline: none;
+  text-decoration: none;
 
   &:hover {
     color: black;
+  }
+
+  &--theme {
+
+    &--outlined-light {
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+
+      &:hover {
+        background-color: white;
+      }
+    }
   }
 }
