@@ -1,63 +1,40 @@
 const SHOP_DATA = {
-  hats: {
+  adidas: {
     id: 1,
-    title: 'Hats',
-    routeName: 'hats',
+    title: 'Adidas',
+    routeName: 'adidas',
     items: [
       {
         id: 1,
-        name: 'Brown Brim',
-        imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
-        price: 25
+        name: 'ZX 2K BOOST SHOES',
+        image: 'adidas-1.jpg',
+        price: 150
       },
       {
         id: 2,
-        name: 'Blue Beanie',
-        imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
-        price: 18
+        name: 'X9000L4 SHOES',
+        image: 'adidas-2.jpg',
+        price: 150
       },
       {
         id: 3,
-        name: 'Brown Cowboy',
-        imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
-        price: 35
+        name: 'ULTRABOOST 20 SHOES',
+        image: 'adidas-3.jpg',
+        price: 180
       },
       {
         id: 4,
-        name: 'Grey Brim',
-        imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
-        price: 25
+        name: 'NITE JOGGER SHOES',
+        image: 'adidas-4.jpg',
+        price: 96,
+        oldPrice: 120
       },
       {
         id: 5,
-        name: 'Green Beanie',
-        imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
-        price: 18
+        name: 'OZWEEGO SHOES',
+        image: 'adidas-5.jpg',
+        price: 110
       },
-      {
-        id: 6,
-        name: 'Palm Tree Cap',
-        imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
-        price: 14
-      },
-      {
-        id: 7,
-        name: 'Red Beanie',
-        imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
-        price: 18
-      },
-      {
-        id: 8,
-        name: 'Wolf Cap',
-        imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
-        price: 14
-      },
-      {
-        id: 9,
-        name: 'Blue Snapback',
-        imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
-        price: 16
-      }
     ]
   },
   sneakers: {

@@ -1,13 +1,17 @@
 import React from 'react';
+
+import Title from '../title/title.component';
+import ProductCard from '../product-card/product-card.component';
+
 import './featured.styles.scss';
 
 const Featured = ({ title = '', items = [], action = null }) => (
   <div className='featured'>
     <div className="featured__header">
-      {title}
+      <Title theme="dark" value={title} />
       {
         action
-          ? <a href={`${action.link}`}>{action.text}</a>
+          ? <a href={`${action.link}`} className="featured__action">{action.text}</a>
           : null
       }
     </div>
@@ -15,9 +19,9 @@ const Featured = ({ title = '', items = [], action = null }) => (
     {
       items
         .filter((_, idx) => idx < 5)
-        .map(({ id, ...rest }) => (
+        .map(item => (
           <div className="featured__item">
-            <div>item</div>
+            <ProductCard item={item} />
           </div>
         ))
     }
