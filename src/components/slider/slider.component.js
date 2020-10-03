@@ -44,7 +44,7 @@ const SliderComponent = () => (
             <p className="slider__title-info">{titleInfo}</p>
             <h2 className="slider__title">{title}</h2>
             <p className="slider__text">{text}</p>
-            <Button theme="outlined-light" href={link}>Shop Now</Button>
+            <Button theme="outlined-light" to={link}>Shop Now</Button>
           </div>
         </div>
       ))

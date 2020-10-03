@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './logo.styles.scss';
 
 const Logo = ({ size, theme }) => {
@@ -13,7 +15,7 @@ const Logo = ({ size, theme }) => {
   }
 
   return (
-    <a href="/" className={classes}>Sneakers</a>
+    <Link to="/" className={classes}>Sneakers</Link>
   );
 };
 

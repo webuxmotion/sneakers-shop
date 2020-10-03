@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './button.styles.scss';
 
@@ -14,8 +15,8 @@ const Button = ({ children, theme, fluid, ...rest }) => {
     classes += ` button--fluid`
   }
 
-  if (rest.href) {
-    CustomTag = 'a'
+  if (rest.to) {
+    CustomTag = Link;
   }
 
   return (

@@ -1,13 +1,21 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 import TopTitle from '../../components/top-title/top-title.component';
 
+import ProductsPage from '../../pages/products/products.page';
+
 import BrandsWrapper from './wrappers/brands/brands.wrapper';
 
-const ShopPage = () => (
+const ShopPage = ({ match }) => (
   <>
-    <TopTitle value="All Brands" />
-    <BrandsWrapper />
+    <Route exact path={`${match.path}`} component={() => (
+      <>
+        <TopTitle value="All Brands" />
+        <BrandsWrapper />
+      </>
+    )} />
+    <Route path={`${match.path}/:brandId`} component={ProductsPage} />
   </>
 );
 

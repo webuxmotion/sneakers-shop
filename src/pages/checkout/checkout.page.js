@@ -4,13 +4,11 @@ import CART_ITEMS, { total } from '../../data/cart-items.data';
 import TopTitle from '../../components/top-title/top-title.component';
 import CartItem from '../../components/cart-item/cart-item.component';
 import Button from '../../components/button/button.component';
-import Header from '../../components/header/header.component';
 
 import './checkout.styles.scss';
 
 const CheckoutPage = () => (
   <div className="checkout-page">
-    <Header setIsOpenCart={() => {}} />
     <TopTitle value="Checkout" />
     <div className="checkout-page__body">
       <div className="checkout-page__list">

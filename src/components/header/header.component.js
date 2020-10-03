@@ -1,6 +1,7 @@
 import React from 'react';
-import CartButton from '../cart-button/cart-button.component';
+import { Link } from 'react-router-dom';
 
+import CartButton from '../cart-button/cart-button.component';
 import Logo from '../logo/logo.component';
 
 import './header.styles.scss';
@@ -29,13 +30,13 @@ const Header = ({ setIsOpenCart, absolute, fixed, theme }) => {
         </div>
         <div className="header__column header__column--big">
           <nav className="header__nav">
-            <a href="/" className="header__link">Home</a>
-            <a href="/shop" className="header__link">Shop</a>
+            <Link to="/" className="header__link">Home</Link>
+            <Link to="/shop" className="header__link">Shop</Link>
           </nav>
         </div>
         <div className="header__column">
           <nav className="header__nav">
-            <a href="/login" className="header__link">Login</a>
+            <Link to="/login" className="header__link">Login</Link>
           </nav>
           <div className="header__cart-button-wrapper">
             <CartButton onClick={() => setIsOpenCart(true)} theme={theme !== 'transparent-light' ? 'dark' : null} />

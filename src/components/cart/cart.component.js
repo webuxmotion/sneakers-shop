@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import CART_ITEMS, { total } from '../../data/cart-items.data';
 
 import CartItem from '../cart-item/cart-item.component';
@@ -8,7 +9,7 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg';
 
 import './cart.styles.scss';
 
-const Cart = ({ open, setIsOpenCart }) => {
+const Cart = ({ open, setIsOpenCart, history }) => {
   let classes = 'cart';
 
   if (open) {
@@ -35,7 +36,11 @@ const Cart = ({ open, setIsOpenCart }) => {
             <span className="cart__total-value">${total}.00</span>
           </div>
           <div className='cart__button-wrap'>
-            <Button href="/checkout" fluid>Checkout</Button>
+            <Button fluid onClick={() => {
+              setIsOpenCart(false);
+
+              history.push('/checkout');
+            }}>Checkout</Button>
           </div>
         </div>
       </div>
@@ -44,4 +49,4 @@ const Cart = ({ open, setIsOpenCart }) => {
   )
 };
 
-export default Cart;
+export default withRouter(Cart);
