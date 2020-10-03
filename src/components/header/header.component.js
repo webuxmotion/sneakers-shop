@@ -5,7 +5,7 @@ import Logo from '../logo/logo.component';
 
 import './header.styles.scss';
 
-const Header = () => (
+const Header = ({ setIsOpenCart }) => (
   <header className="header">
     <div className="header__column">
       <Logo />
@@ -21,7 +21,7 @@ const Header = () => (
         <a href="/login" className="header__link">Login</a>
       </nav>
       <div className="header__cart-button-wrapper">
-        <CartButton />
+        <CartButton onClick={() => setIsOpenCart(true)} />
       </div>
     </div>
   </header>

@@ -20,7 +20,7 @@ const Featured = ({ title = '', items = [], action = null }) => (
       items
         .filter((_, idx) => idx < 5)
         .map(item => (
-          <div className="featured__item">
+          <div className="featured__item" key={item.id}>
             <ProductCard item={item} />
           </div>
         ))

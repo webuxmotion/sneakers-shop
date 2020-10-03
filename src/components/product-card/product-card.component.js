@@ -5,7 +5,7 @@ import Button from '../button/button.component';
 import './product-card.styles.scss';
 
 const ProductCard = ({ item }) => {
-  const { id, name, image, price, oldPrice } = item;
+  const { name, image, price, oldPrice } = item;
 
   return (
     <div className="product-card">

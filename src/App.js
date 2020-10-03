@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import HomePage from './pages/home/home.page';
 
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
+import Cart from './components/cart/cart.component';
 
 function App() {
+  const [isOpenCart, setIsOpenCart] = useState(false);
+
   return (
     <div className="app">
       <div className="app__content">
-        <Header />
+        <Cart open={isOpenCart} setIsOpenCart={setIsOpenCart} />
+        <Header setIsOpenCart={setIsOpenCart} />
         <HomePage />
       </div>
       <div className="app__footer">
