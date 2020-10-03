@@ -38,7 +38,7 @@ const SliderComponent = () => (
       sliderItems.map(({ titleInfo, title, text, link, image }) => (
         <div className="slider__item">
           <div className="slider__bg" style={{
-            backgroundImage: `url(./images/${image})`
+            backgroundImage: `url(/images/${image})`
           }}></div>
           <div className="slider__info">
             <p className="slider__title-info">{titleInfo}</p>
