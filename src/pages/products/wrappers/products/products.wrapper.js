@@ -9,7 +9,7 @@ const ProductsWrapper = () => (
   <div className="products-page-products-wrapper">
     <div className="products-page-products-wrapper__list">
       {
-        SHOP_DATA.adidas.items
+        SHOP_DATA['adidas'].items
           .map(item => (
             <div className="products-page-products-wrapper__item" key={item.id}>
               <ProductCard item={item} />
