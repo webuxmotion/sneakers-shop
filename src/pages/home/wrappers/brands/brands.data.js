@@ -25,6 +25,4 @@ const brands = [
   },
 ];
 
-export {
-  brands
-}
+export default brands;

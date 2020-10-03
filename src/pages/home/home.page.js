@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Brands from '../../components/brands/brands.component';
 import Slider from '../../components/slider/slider.component';
 
 import FeaturedWrapper from './wrappers/featured/featured.wrapper';
+import BrandsWrapper from './wrappers/brands/brands.wrapper';
 
 const HomePage = () => (
   <>
     <Slider />
-    <Brands />
+    <BrandsWrapper />
     <FeaturedWrapper />
   </>
 );
