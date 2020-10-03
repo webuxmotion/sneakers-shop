@@ -1,12 +1,12 @@
 import React from 'react';
-import SHOP_DATA from './shoes.data';
+import SHOP_DATA from '../../../../data/shoes.data';
 
 import Featured from '../../../../components/featured/featured.component';
 
 import './featured.styles.scss';
 
 const FeaturedWrapper = () => (
-  <div className="featured-wrapper">
+  <div className="home-page-featured-wrapper">
     <Featured
       items={SHOP_DATA.adidas.items}
       title="Featured Shoes"

@@ -1,7 +1,9 @@
-.brands {
-  padding: 0 20px;
-  
-  &__container {
+@import '../../../../vars.scss';
+
+.products-page-products-wrapper {
+  padding: 40px $spacing-x;
+
+  &__list {
     display: flex;
     flex-wrap: wrap;
   }

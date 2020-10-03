@@ -9,7 +9,6 @@ const Brands = ({ items = [] }) => (
     <div className="brands__container">
       {
         items
-          .filter((_, idx) => idx < 4)
           .map(({ id, ...rest }) => (
             <div className="brands__item" key={id}>
               <BrandItem key={id} {...rest} />

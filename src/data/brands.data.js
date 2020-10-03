@@ -23,6 +23,12 @@ const brands = [
     id: 4,
     link: 'shop/new-balance'
   },
+  {
+    title: 'Balenciaga shoes',
+    image: 'brand-5.jpg',
+    id: 5,
+    link: 'shop/balenciaga'
+  },
 ];
 
 export default brands;

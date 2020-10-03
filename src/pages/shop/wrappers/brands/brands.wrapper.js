@@ -6,9 +6,9 @@ import Brands from '../../../../components/brands/brands.component';
 import './brands.styles.scss';
 
 const BrandsWrapper = () => (
-  <div className="home-page-brands-wrapper">
+  <div className="shop-page-brands-wrapper">
     <Brands
-      items={BRANDS_DATA.filter((_, idx) => idx < 4)}
+      items={BRANDS_DATA}
     />
   </div>
 );
