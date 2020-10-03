@@ -16,11 +16,11 @@ function App() {
     <div className="app">
       <div className="app__content">
         <Cart open={isOpenCart} setIsOpenCart={setIsOpenCart} />
-        <Header setIsOpenCart={setIsOpenCart} />
+        <Header setIsOpenCart={setIsOpenCart} absolute theme="transparent-light" />
+        <HomePage />
         <CheckoutPage />
         <ShopPage />
         <ProductsPage />
-        <HomePage />
       </div>
       <div className="app__footer">
         <Footer />

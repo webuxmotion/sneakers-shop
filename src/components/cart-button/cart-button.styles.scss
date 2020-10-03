@@ -5,6 +5,22 @@
   display: block;
   position: relative;
 
+  &--theme {
+
+    &--dark {
+
+      .cart-button {
+
+        &__icon {
+          
+          g {
+            stroke: black;
+          }
+        }
+      }
+    }
+  }
+
   &__icon {
     display: block;
   }

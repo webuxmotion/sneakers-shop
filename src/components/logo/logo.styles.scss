@@ -4,6 +4,13 @@
   font-size: 45px;
   font-weight: bold;
 
+  &--theme {
+
+    &--dark {
+      color: black;
+    }
+  }
+
   &--size {
 
     &--small {
