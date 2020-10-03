@@ -1,22 +1,18 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import animateScrollTo from 'animated-scroll-to';
+import { Link } from 'react-router-dom';
 
 import Title from '../title/title.component';
 import ProductCard from '../product-card/product-card.component';
 
 import './featured.styles.scss';
 
-const Featured = ({ title = '', items = [], action = null, history }) => (
+const Featured = ({ title = '', items = [], action = null }) => (
   <div className='featured'>
     <div className="featured__header">
       <Title theme="dark" value={title} />
       {
         action
-          ? <span className="featured__action" onClick={() => {
-            animateScrollTo(0);
-            history.push(action.link);
-          }}>{action.text}</span>
+          ? <Link to={action.link} className="featured__action">{action.text}</Link>
           : null
       }
     </div>
@@ -34,4 +30,4 @@ const Featured = ({ title = '', items = [], action = null, history }) => (
   </div>
 );
 
-export default withRouter(Featured);
+export default Featured;
