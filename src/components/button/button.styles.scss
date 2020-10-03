@@ -1,0 +1,25 @@
+@import '../../vars.scss';
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 165px;
+  width: auto;
+  height: 56px;
+  padding: 0 35px 0 35px;
+  background-color: $primary-color;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+
+  &:hover {
+    color: black;
+  }
+}
