@@ -4,7 +4,7 @@ import { ReactComponent as DeleteIcon } from '../../assets/icons/close.svg';
 
 import './cart-item.styles.scss';
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, counter }) => {
   const { image, price, quantity, name } = item;
   
   return (
@@ -23,6 +23,15 @@ const CartItem = ({ item }) => {
           <span className="cart-item__multiply">x</span>
           <span className="cart-item__price">${price}.00</span>
         </div>
+        {
+          counter ? (
+            <div className="cart-item__counter">
+              <span className="cart-item__counter-button">-</span>
+              <span className="cart-item__counter-value">{quantity}</span>
+              <span className="cart-item__counter-button">+</span>
+            </div>
+          ) : null
+        }
       </div>
       <span className="cart-item__delete-button">
         <DeleteIcon className="cart-item__delete-icon" />

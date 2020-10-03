@@ -1,5 +1,5 @@
 import React from 'react';
-import SHOP_DATA from '../../data/shoes.data';
+import CART_ITEMS, { total } from '../../data/cart-items.data';
 
 import CartItem from '../cart-item/cart-item.component';
 import Button from '../button/button.component';
@@ -10,16 +10,6 @@ import './cart.styles.scss';
 
 const Cart = ({ open, setIsOpenCart }) => {
   let classes = 'cart';
-
-  const cartItems = SHOP_DATA.adidas.items
-    .filter((_, idx) => idx < 2)
-    .map(item => ({
-      quantity: item.id * 2,
-      ...item
-    }));
-
-  const total = cartItems
-    .reduce((acc, item) => acc + item.quantity * item.price, 0);
 
   if (open) {
     classes += ' is-open'
@@ -36,7 +26,7 @@ const Cart = ({ open, setIsOpenCart }) => {
         </div>
         <div className='cart__list'>
           {
-            cartItems.map(item => <CartItem key={item.id} item={item} />)
+            CART_ITEMS.map(item => <CartItem key={item.id} item={item} />)
           }
         </div>
         <div className='cart__footer'>
