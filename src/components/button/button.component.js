@@ -2,12 +2,16 @@ import React from 'react';
 
 import './button.styles.scss';
 
-const Button = ({ children, theme, ...rest }) => {
+const Button = ({ children, theme, fluid, ...rest }) => {
   let classes = 'button';
   let CustomTag = 'button';
 
   if (theme) {
     classes += ` button--theme--${theme}`
+  }
+
+  if (fluid) {
+    classes += ` button--fluid`
   }
 
   if (rest.href) {

@@ -1,0 +1,65 @@
+@import '../../vars.scss';
+
+.cart-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+
+  &__image-column {
+    width: 100px;
+  }
+
+  &__image-wrapper {
+    padding-bottom: 110%;
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+  
+  &__image-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ebeeef;
+  }
+
+  &__info-column {
+    padding: 0 10px;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+  }
+
+  &__multiply {
+    margin: 0 5px;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__delete-button {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  &__delete-icon {
+    width: 10px;
+    height: 10px;
+  }
+}
