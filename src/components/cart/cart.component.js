@@ -1,7 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import { total } from '../../data/cart-items.data';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
 
 import CartItem from '../cart-item/cart-item.component';
 import Button from '../button/button.component';
@@ -50,8 +52,8 @@ const Cart = ({ open, setIsOpenCart, history, cartItems }) => {
   )
 };
 
-const mapStateToProps = ({ cart: { cartItems }}) => ({
-  cartItems
+const mapStateToProps = state => ({
+  cartItems: selectCartItems(state)
 });
 
 export default withRouter(

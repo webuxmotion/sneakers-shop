@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { logout } from '../../redux/user/user.actions';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import CartButton from '../cart-button/cart-button.component';
 import Logo from '../logo/logo.component';
@@ -54,8 +55,8 @@ const Header = ({ setIsOpenCart, absolute, fixed, theme, currentUser, logout }) 
   )
 };
 
-const mapStateToProps = ({ user: { currentUser }}) => ({
-  currentUser
+const mapStateToProps = state => ({
+  currentUser: selectCurrentUser(state)
 });
 
 const mapDispatchToProps = dispatch => ({

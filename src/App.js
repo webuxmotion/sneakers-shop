@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
+
+import { selectCurrentUser } from './redux/user/user.selectors';
 
 import HomePage from './pages/home/home.page';
 import ShopPage from './pages/shop/shop.page';
@@ -43,8 +46,8 @@ function App({ currentUser }) {
   );
 }
 
-const mapStateToProps = ({ user: { currentUser }}) => ({
-  currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 export default connect(mapStateToProps)(App);
