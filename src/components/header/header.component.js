@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { logout } from '../../redux/user/user.actions';
 
 import CartButton from '../cart-button/cart-button.component';
 import Logo from '../logo/logo.component';
 
 import './header.styles.scss';
 
-const Header = ({ setIsOpenCart, absolute, fixed, theme }) => {
+const Header = ({ setIsOpenCart, absolute, fixed, theme, currentUser, logout }) => {
   let classes = 'header';
 
   if (absolute) {
@@ -36,7 +39,11 @@ const Header = ({ setIsOpenCart, absolute, fixed, theme }) => {
         </div>
         <div className="header__column">
           <nav className="header__nav">
-            <Link to="/login" className="header__link">Login</Link>
+            {
+              currentUser
+                ? <span className="header__link" onClick={() => logout()}>Logout</span>
+                : <Link to="/login" className="header__link">Login</Link>
+            }
           </nav>
           <div className="header__cart-button-wrapper">
             <CartButton onClick={() => setIsOpenCart(true)} theme={theme !== 'transparent-light' ? 'dark' : null} />
@@ -47,4 +54,12 @@ const Header = ({ setIsOpenCart, absolute, fixed, theme }) => {
   )
 };
 
-export default Header;
+const mapStateToProps = ({ user: { currentUser }}) => ({
+  currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

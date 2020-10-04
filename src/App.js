@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import HomePage from './pages/home/home.page';
 import ShopPage from './pages/shop/shop.page';
 import CheckoutPage from './pages/checkout/checkout.page';
+import LoginPage from './pages/login/login.page';
 
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
@@ -11,7 +13,7 @@ import Cart from './components/cart/cart.component';
 
 import './App.css';
 
-function App() {
+function App({ currentUser }) {
   const [isOpenCart, setIsOpenCart] = useState(false);
   const [indexPage, setIndexPage] = useState(false);
   
@@ -24,6 +26,14 @@ function App() {
           <Route exact path='/' component={() => <HomePage setIndexPage={setIndexPage} />} />
           <Route exact path='/checkout' component={CheckoutPage} />
           <Route path='/shop' component={ShopPage} />
+          <Route exact path='/login' render={() =>
+              currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                <LoginPage />
+              )
+            }
+          />
         </Switch>
       </div>
       <div className="app__footer">
@@ -33,4 +43,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = ({ user: { currentUser }}) => ({
+  currentUser
+});
+
+export default connect(mapStateToProps)(App);
